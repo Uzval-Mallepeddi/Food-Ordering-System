@@ -1,4 +1,4 @@
-# food_ordering_system
+# Food Ordering System
 
 Refer - [Maven Repository for Spring MVC Dependency](https://mvnrepository.com/artifact/org.springframework/spring-webmvc)
 
