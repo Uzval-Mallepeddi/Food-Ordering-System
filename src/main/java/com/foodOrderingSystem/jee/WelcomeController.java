@@ -9,7 +9,7 @@ public class WelcomeController {
 	
 	@RequestMapping(value="/welcome")
 	public String welcome() {
-		return "welcome";
+		return "welcome111";
 	}
 	
 }
