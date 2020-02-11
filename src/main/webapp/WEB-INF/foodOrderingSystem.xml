@@ -17,7 +17,6 @@
             <value>.jsp</value>
         </property>
     </bean>
-	
-	<mvc:annotation-driven />
-	    
+	<mvc:resources location='/resources/' mapping='/resources/**'></mvc:resources>
+	<mvc:annotation-driven /> 
 </beans>
