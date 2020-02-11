@@ -12,4 +12,8 @@ public class WelcomeController {
 		return "welcome";
 	}
 	
+	@RequestMapping(value="/")
+	public String index() {
+		return "index";
+	}
 }
