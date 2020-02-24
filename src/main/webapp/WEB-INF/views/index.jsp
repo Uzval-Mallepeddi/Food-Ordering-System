@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +26,8 @@
           <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <br/><br/>
-            <a href="#login">Login <i class="fas fa-sign-in-alt" style="float: right; margin-right: 32px;"></i></a>
+            <a href="/login">Login <i class="fas fa-sign-in-alt" style="float: right; margin-right: 32px;"></i></a>
+            <a href="/signup">Signup <i class="fas fa-level-up-alt" style="float: right; margin-right: 32px;"></i></a>
             <a href="#menu-list">Menu <i class="fas fa-list" style="float: right; margin-right: 32px;"></i></a>
             <a href="#order">Order <i class="fas fa-utensils" style="float: right; margin-right: 32px;"></i></a>
             <a href="#about">About <i class="fas fa-info" style="float: right; margin-right: 32px;"></i></a>
@@ -40,6 +43,18 @@
             <h1 class="logo-name">Foodiee</h1>
             <h2>Food To fit your lifestyle & health.</h2>
             <p>We are the International Cuisine!!</p>
+            <c:if test="${ param.logout != null }">
+      		<a href="/login" class="btn btn-success" style="color: black">Login <i class="fas fa-sign-in-alt"></i></a>
+            <a href="/signup" class="btn btn-warning" style="color: black">Signup <i class="fas fa-level-up-alt"></i></a>
+      	  	</c:if>
+      	  
+      	  	<c:if test="${ param.logout == null }">
+      			<form:form method="POST" action="${pageContext.request.contextPath}/logout">
+      				<button type="submit" class="btn btn-danger">
+      					Logout <i class="fas fa-sign-out-alt"></i>
+      				</button>
+      			</form:form>
+      	  	</c:if>
           </div>
         </div>
       </div>
