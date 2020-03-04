@@ -5,7 +5,6 @@ import org.hibernate.query.Query;
 
 import com.foodOrderingSystem.entity.User;
 
-
 public interface UserDAO {
 	public List<User> getUsers();
 	public void saveUser(User theUser);
