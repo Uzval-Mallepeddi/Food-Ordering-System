@@ -54,7 +54,7 @@
   			</button>
 		  </div>
       	  <% } %>
-            <h1 class="logo-name" style="margin-top: 80px !important">Foodiee</h1>
+            <h1 class="logo-name" style="margin-top: 80px !important">Foodiee <i class="fas fa-cookie-bite"></i></h1>
             <h2>Food To fit your lifestyle & health.</h2>
             <p>We are the International Cuisine!!</p>
           </div>

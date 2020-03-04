@@ -38,6 +38,12 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		session.setAttribute("user", theUser);
 		// forward to home page
 		
+		User user = (User) session.getAttribute("user");
+		System.out.println(user);
+		// get all info about logged-in user
+		session.setAttribute("name", user.getFirstName()+" "+user.getLastName());
+		session.setAttribute("role", user.getRole().toString());
+		session.setAttribute("username", user.getUserName());
 		response.sendRedirect(request.getContextPath() + "/");
 	}
 
