@@ -5,9 +5,13 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.hibernate.query.Query;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.BeanDefinitionDsl.Role;
 import org.springframework.security.config.core.GrantedAuthorityDefaults;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -33,10 +37,10 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public void save(User theUser) {
 		User user = new User();
-		user.setRole(theUser.getRole());
 		user.setFirstName(theUser.getFirstName());
 		user.setLastName(theUser.getLastName());
 		user.setUserName(theUser.getUserName());
+		user.setRole(theUser.getRole());
 		user.setPassword(passwordEncoder.encode(theUser.getPassword()));
 		userDAO.saveUser(user);
 	}

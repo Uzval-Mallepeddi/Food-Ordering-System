@@ -1,4 +1,4 @@
-create table users(id int auto_increment primary key, first_name varchar(50) NOT NULL, last_name varchar(50) NOT NULL, email varchar(25) NOT NULL UNIQUE, password varchar(15) NOT NULL, role enum('admin', 'employee', 'user') NOT NULL)
+create table users(id int auto_increment primary key, first_name varchar(50) NOT NULL, last_name varchar(50) NOT NULL, email varchar(500) NOT NULL UNIQUE, password varchar(15) NOT NULL, role enum('admin', 'employee', 'user') NOT NULL)
 
 create table users(id int auto_increment primary key, first_name varchar(50) NOT NULL, last_name varchar(50) NOT NULL, username varchar(25) NOT NULL UNIQUE, password varchar(15) NOT NULL, role varchar(50) NOT NULL)
 

@@ -54,6 +54,15 @@
   			</button>
 		  </div>
       	  <% } %>
+      	  
+      	  <% if(Boolean.valueOf(session.getAttribute("loggedin").toString())) { %>
+          <div class="alert alert-danger alert-dismissible" role="alert" style="margin: auto; width: 32%; text-align: center">
+  			<strong>Oops!</strong> You are already logged-in.
+  			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+  			</button>
+		  </div>
+      	  <% } %>
             <h1 class="logo-name" style="margin-top: 80px !important">Foodiee <i class="fas fa-cookie-bite"></i></h1>
             <h2>Food To fit your lifestyle & health.</h2>
             <p>We are the International Cuisine!!</p>

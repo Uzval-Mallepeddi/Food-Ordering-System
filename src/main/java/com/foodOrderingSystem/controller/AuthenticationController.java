@@ -23,31 +23,53 @@ public class AuthenticationController {
     private UserService userService;
 	
 	@RequestMapping("/login")
-	public String login() {
-		return "login";
+	public String login(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		if(session.getAttribute("user") == null)
+		{
+			session.setAttribute("role", null);
+			session.setAttribute("loggedin", false);
+			return "login";
+		}
+		else
+		{
+			session.setAttribute("loggedin", true);
+			return "index";
+		}
 	}
 	
 	@GetMapping("/signup")
 	public String signup(Model theModel, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		if(session.getAttribute("user") != null) {
-			session.setAttribute("error", "loggedin");
-			return "index";
-		}
-		else {
+		if(session.getAttribute("user") == null) {
+			session.setAttribute("error", null);
 			User user = new User();
 			theModel.addAttribute("user", user);
 			return "signup";
+		}
+		else if(session.getAttribute("user") != null && session.getAttribute("role").equals("ADMIN")) {
+			session.setAttribute("error", null);
+			User user = new User();
+			theModel.addAttribute("user", user);
+			return "signup";
+		}
+		
+		else {
+			session.setAttribute("error", "loggedin");
+			return "index";
 		}
 	}
 	
 	@PostMapping("/save")
 	public String signUpUser(@Valid @ModelAttribute("user") User theUser, BindingResult theBindingResult, 
-			Model theModel) {
+			Model theModel, HttpServletRequest request) {
 		//userService.signupUser(theUser);
+		HttpSession session = request.getSession();
+		System.out.println(theUser);
 		if (theBindingResult.hasErrors()){
+			System.out.println(">>>>>"+theBindingResult.getAllErrors());
 			 return "signup";
-	        }
+	    }
 		else {
 			userService.save(theUser);
 			return "redirect:/home";
