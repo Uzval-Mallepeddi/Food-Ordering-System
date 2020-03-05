@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${ fn:toUpperCase(type) } | Foodiee</title>
+<title>${ fn:toUpperCase(fooditemname) }| Foodiee</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/login.css" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
@@ -17,21 +17,41 @@
 </div>
 <br/>
 <br/>
-<br/>
-<h2 style="color: black; text-align: center">Item Type</h2>
+<h2 style="color: black; text-align: center; margin-top: 60px !important;">Food Item</h2>
 <hr style="background-color: white">
 
 <div class="container animated bounceIn" style="display:flex; width:90vw; height: 60vh; margin: auto;">
-  <div class = "card" style = "background-color: black; width: 37%; padding: 20px; margin: auto; color: white; opacity: 0.9"><br/>
+  <div class = "card" style = "background-color: black; width: 67%; padding: 20px; margin: auto; color: white; opacity: 0.9;"><br/>
     <div class = "card-body">
         <blockquote class="blockquote text-center">
-            <h2 style="color: white; font-family: Courier New, Lucida, Console">${type}</h2>
-            <div class="blockquote-footer"><cite title="Source Title">${description}</cite></div>
+            <h2 style="color: white; font-family: Courier New, Lucida, Console">${fooditemname}</h2>
+            <div class="blockquote-footer"><cite title="Source Title">${fooditemdesc}</cite></div>
         </blockquote>
 		<br/>
+		<hr style="color: white; background-color: white">
+		<dl>
+			<dt class="inline-block">Image Link:</dt>
+			<dd>
+				<ul>
+					<ul><a href="${fooditemimg}" target="_blank">${fooditemimg}</a></ul>
+				</ul>
+			</dd>
+		</dl>
+		<dl>
+			<dt class="inline-block">Price: <span style="color: white; font-weight: normal">${fooditemprice}</span></dt>
+		</dl>
+		<dl>
+			<dt class="inline-block">Food Item Availability: <span style="color: white; font-weight: normal">${fooditemavailable}</span></dt>
+		</dl>
+		<dl>
+			<dt class="inline-block">Added by: <span style="color: white; font-weight: normal">${fooditemaddedby}</span></dt>
+		</dl>
+		<dl>
+			<dt class="inline-block">Added at: <span style="color: white; font-weight: normal">${fooditemaddedat}</span></dt>
+		</dl>
       <div class="text-center">
-        <a href="/itemtype/update/${ id }" class="btn btn-warning">Edit</a>
-        <a href="/itemtypes" class="btn btn-primary">Back</a>
+        <a href="/fooditem/update/${ fooditemid }/${ fooditemavailable }" class="btn btn-warning">Edit</a>
+        <a href="/fooditems" class="btn btn-primary">Back</a>
       </div>
     </div>
   </div>

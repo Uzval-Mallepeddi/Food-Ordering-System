@@ -9,7 +9,7 @@ import com.foodOrderingSystem.entity.*;
 
 public interface UserService extends UserDetailsService{
 
-    User findByUserName(String userName);
-    void save(User user);
-	
+    public User findByUserName(String userName);
+    public void save(User user);
+    public User getUser(int theId);
 }

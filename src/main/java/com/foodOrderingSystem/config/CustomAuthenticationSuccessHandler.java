@@ -29,7 +29,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
 		String userName = authentication.getName();
 		
-		System.out.println("userName=" + userName);
+		//System.out.println("userName=" + userName);
 
 		User theUser = userService.findByUserName(userName);
 		
@@ -39,8 +39,9 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		// forward to home page
 		
 		User user = (User) session.getAttribute("user");
-		System.out.println(user);
+		//System.out.println(user);
 		// get all info about logged-in user
+		session.setAttribute("id", user.getId());
 		session.setAttribute("name", user.getFirstName()+" "+user.getLastName());
 		session.setAttribute("role", user.getRole().toString());
 		session.setAttribute("username", user.getUserName());

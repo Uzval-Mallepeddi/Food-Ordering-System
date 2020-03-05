@@ -16,6 +16,7 @@
 </div>
 <br/>
 <br/>
+<br/>
 <h2 style="color: black; text-align: center">Item Types</h2>
 <hr style="background-color: white">
 <div class="container animated fadeInLeft text-center" style="margin-top: 50px">

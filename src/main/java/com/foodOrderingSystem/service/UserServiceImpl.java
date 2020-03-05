@@ -40,6 +40,12 @@ public class UserServiceImpl implements UserService {
 		user.setPassword(passwordEncoder.encode(theUser.getPassword()));
 		userDAO.saveUser(user);
 	}
+	
+	@Override
+	@Transactional
+	public User getUser(int theId) {
+		return userDAO.getUser(theId);
+	}
 
 	@Override
 	@Transactional
