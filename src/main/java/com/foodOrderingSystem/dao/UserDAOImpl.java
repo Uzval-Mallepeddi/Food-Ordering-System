@@ -21,11 +21,9 @@ public class UserDAOImpl implements UserDAO{
 	
 	@Override
 	public List<User> getUsers() {
-		
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query<User> theQuery = currentSession.createQuery("from users", User.class);
 		List<User> theUsers = theQuery.getResultList();
-		
 		return theUsers;
 	}
 	
