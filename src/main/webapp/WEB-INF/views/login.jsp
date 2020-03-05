@@ -14,8 +14,8 @@
 <div id="header">
     <%@ include file="/WEB-INF/views/header.jspf" %>
 </div>
-<div class="container animated fadeIn" style="display:flex; justify-content: center; align-items: center; height: 85vh; opacity: 0.8; color: white;">
-  <div class = "card" style = "background-color: black; width: 37%; padding: 20px"><br/>
+<div class="container animated fadeIn" style="display:flex; width:90vw; height: 90vh; margin: auto;">
+  <div class = "card" style = "background-color: black; width: 37%; padding: 20px; margin: auto; color: white; opacity: 0.9"><br/>
     <h2 class= "text-center" style="color: white; padding-top: 14px">Login</h2><hr style="background: white; width: 70%; margin: auto;">
       <div class = "card-body">
       	<form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="post" role="form">

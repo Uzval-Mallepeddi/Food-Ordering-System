@@ -1,6 +1,7 @@
 package com.foodOrderingSystem.entity;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.*;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -34,7 +35,18 @@ public class User {
     @NotEmpty
     @Column(name="role")
     private String role;
-	
+    
+    @OneToMany(mappedBy="userId")
+    private List<FoodItem> foodItem;
+    
+	public List<FoodItem> getFoodItem() {
+		return foodItem;
+	}
+
+	public void setFoodItem(List<FoodItem> foodItem) {
+		this.foodItem = foodItem;
+	}
+
 	public int getId() {
 		return id;
 	}

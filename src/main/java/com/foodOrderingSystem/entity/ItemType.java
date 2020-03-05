@@ -1,10 +1,13 @@
 package com.foodOrderingSystem.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity(name="item_type")
@@ -21,6 +24,17 @@ public class ItemType {
 	
 	@Column(name="description")
 	private String description;
+	
+	@OneToMany(mappedBy="itemTypeId")
+	private List<FoodItem> foodItem;
+	
+	public List<FoodItem> getFoodItem() {
+		return foodItem;
+	}
+
+	public void setFoodItem(List<FoodItem> foodItem) {
+		this.foodItem = foodItem;
+	}
 
 	public int getId() {
 		return id;

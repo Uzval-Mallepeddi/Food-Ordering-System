@@ -27,18 +27,18 @@ public class ItemTypeController {
 	@Autowired
     private ItemTypeService itemTypeService;
 	
-	@GetMapping("/itemtype/new")
-	public String itemtype(Model itemTypeModel) {
-		ItemType itemtype = new ItemType();
-		itemTypeModel.addAttribute("itemtype", itemtype);
-		return "new_item_type";
-	}
-	
 	@GetMapping("/itemtypes")
 	public String listitemtypes(Model theModel) {
 		List<ItemType> itemTypes = itemTypeService.getAllItemTypes();
 		theModel.addAttribute("itemTypes", itemTypes);
 		return "item_types";
+	}
+	
+	@GetMapping("/itemtype/new")
+	public String itemtype(Model itemTypeModel) {
+		ItemType itemtype = new ItemType();
+		itemTypeModel.addAttribute("itemtype", itemtype);
+		return "new_item_type";
 	}
 	
 	@PostMapping("/saveItemType")

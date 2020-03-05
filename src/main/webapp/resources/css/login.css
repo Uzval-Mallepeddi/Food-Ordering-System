@@ -43,3 +43,15 @@ body {
 .a-2 {
 	float: right;
 }
+.disabled:hover{
+	cursor: disabled;
+}
+dt{
+	color: red;
+}
+
+#header {
+	position: fixed;
+	width: 100%;
+	z-index: 111
+}

@@ -10,4 +10,5 @@ public interface UserDAO {
 	public void saveUser(User theUser);
 	public User findByUserName(String userName);
 	public User getUserId(String userName);
+	public User getUser(int theId);
 }
