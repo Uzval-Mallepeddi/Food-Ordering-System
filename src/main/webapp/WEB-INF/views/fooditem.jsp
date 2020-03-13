@@ -33,7 +33,7 @@
 			<dt class="inline-block">Image Link:</dt>
 			<dd>
 				<ul>
-					<ul><a href="${fooditemimg}" target="_blank">${fooditemimg}</a></ul>
+					<a href="${fooditemimg}" target="_blank">${fooditemimg}</a>
 				</ul>
 			</dd>
 		</dl>
@@ -50,7 +50,7 @@
 			<dt class="inline-block">Added at: <span style="color: white; font-weight: normal">${fooditemaddedat}</span></dt>
 		</dl>
       <div class="text-center">
-        <a href="/fooditem/update/${ fooditemid }/${ fooditemavailable }" class="btn btn-warning">Edit</a>
+        <a href="/fooditem/update/${ fooditemid }" class="btn btn-warning">Edit</a>
         <a href="/fooditems" class="btn btn-primary">Back</a>
       </div>
     </div>

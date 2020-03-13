@@ -40,9 +40,9 @@
 		  					${tempFoodItem.availability}
 		  		  		</td>
 		  		  		<td>
-		  		  			<a href="/fooditem/view/${tempFoodItem.id}/${tempFoodItem.availability}" class="btn btn-warning">View</a>
-		  					<a href="/fooditem/update/${tempFoodItem.id}/${tempFoodItem.availability}" class="btn btn-info">Edit</a>
-		  					<a href="/fooditem/delete/${tempFoodItem.id}/${tempFoodItem.availability}" class="btn btn-danger" onclick="if(!(confirm('Are you sure that you want to delete this Food Item?'))) return false;"
+		  		  			<a href="/fooditem/view/${tempFoodItem.id}" class="btn btn-warning">View</a>
+		  					<a href="/fooditem/update/${tempFoodItem.id}" class="btn btn-info">Edit</a>
+		  					<a href="/fooditem/delete/${tempFoodItem.id}" class="btn btn-danger" onclick="if(!(confirm('Are you sure that you want to delete this Food Item?'))) return false;"
 		  					>Delete</a>
 		  		  		</td>
 					</tr>

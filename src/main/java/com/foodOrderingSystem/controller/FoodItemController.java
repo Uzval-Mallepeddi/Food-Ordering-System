@@ -62,16 +62,16 @@ public class FoodItemController {
 		return "redirect:/fooditems";
 	}
 	
-	@GetMapping("/fooditem/update/{id}/{item_availability}")
-	public String updateFoodItem(@PathVariable int id, @PathVariable String item_availability, Model theModel) {
-		FoodItem item = foodItemService.getFoodItem(id, item_availability);
+	@GetMapping("/fooditem/update/{id}")
+	public String updateFoodItem(@PathVariable int id, Model theModel) {
+		FoodItem item = foodItemService.getFoodItem(id);
 		theModel.addAttribute("fooditem", item);
 		return "new_food_item";
 	}
 	
-	@GetMapping("/fooditem/view/{id}/{item_availability}")
-	public String viewFoodItem(@PathVariable int id, @PathVariable String item_availability, Model theModel) {
-		FoodItem item = foodItemService.getFoodItem(id, item_availability);
+	@GetMapping("/fooditem/view/{id}")
+	public String viewFoodItem(@PathVariable int id, Model theModel) {
+		FoodItem item = foodItemService.getFoodItem(id);
 		theModel.addAttribute("fooditemname", item.getName());
 		theModel.addAttribute("fooditemdesc", item.getDesc());
 		theModel.addAttribute("fooditemimg", item.getImglink());
@@ -86,9 +86,9 @@ public class FoodItemController {
 		return "fooditem";
 	}
 	
-	@GetMapping("/fooditem/delete/{id}/{item_availability}")
-	public String deleteFoodItem(@PathVariable int id, @PathVariable String item_availability) {
-		foodItemService.deleteFoodItem(id, item_availability);
+	@GetMapping("/fooditem/delete/{id}")
+	public String deleteFoodItem(@PathVariable int id) {
+		foodItemService.deleteFoodItem(id);
 		return "redirect:/fooditems";
 	}
 	

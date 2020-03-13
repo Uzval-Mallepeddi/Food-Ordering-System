@@ -48,7 +48,7 @@ public class FoodOrderingSystemSecurityConfig extends WebSecurityConfigurerAdapt
 			.logout().permitAll();
 //			.and()
 //			.exceptionHandling().accessDeniedPage("/access-denied");
-		
+		http.csrf().disable();
 	}
 	
 	@Override
@@ -71,4 +71,5 @@ public class FoodOrderingSystemSecurityConfig extends WebSecurityConfigurerAdapt
 		auth.setPasswordEncoder(passwordEncoder()); //set the password encoder - bcrypt
 		return auth;
 	}
+	
 }
