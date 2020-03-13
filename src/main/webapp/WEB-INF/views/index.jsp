@@ -3,7 +3,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +33,7 @@
       				<a href="#" onclick="this.parentNode.submit()">Logout <i class="fas fa-sign-out-alt" style="float: right; margin-right: 32px;"></i></a>
       			</form:form>
             <% } %>
-            <a href="#menu-list">Menu <i class="fas fa-list" style="float: right; margin-right: 32px;"></i></a>
+            <a href="/menu">Menu <i class="fas fa-list" style="float: right; margin-right: 32px;"></i></a>
             <a href="#order">Order <i class="fas fa-utensils" style="float: right; margin-right: 32px;"></i></a>
             <a href="#about">About <i class="fas fa-info" style="float: right; margin-right: 32px;"></i></a>
             <a href="#event">Event <i class="fas fa-calendar-week" style="float: right; margin-right: 32px;"></i></a>

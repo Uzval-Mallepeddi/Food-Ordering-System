@@ -1,0 +1,10 @@
+<footer class="text-muted bg-dark" style="padding: 20px !important">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <div class="container text-center">
+       <span class="text-muted">Developed by <a href="https://github.com/Uzval-Mallepeddi" target="_blank">Uzval Mallepeddi </a>&copy; 2020 | All Rights Reserved</span>
+     </div>
+  </div>
+</footer>

@@ -13,8 +13,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 @Entity(name="food_item")
 @Table(name="food_item")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class FoodItem {
 	
 	@Id

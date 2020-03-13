@@ -31,14 +31,14 @@ public class FoodItemServiceImpl implements FoodItemService {
 
 	@Override
 	@Transactional
-	public FoodItem getFoodItem(int theId, String item_availability) {
-		FoodItem type = foodItemDAO.getFoodItem(theId, item_availability);
+	public FoodItem getFoodItem(int theId) {
+		FoodItem type = foodItemDAO.getFoodItem(theId);
 		return type;
 	}
 
 	@Override
 	@Transactional
-	public void deleteFoodItem(int id, String item_availability) {
-		foodItemDAO.delete(id, item_availability);
+	public void deleteFoodItem(int id) {
+		foodItemDAO.delete(id);
 	}
 }

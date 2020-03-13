@@ -7,6 +7,6 @@ import com.foodOrderingSystem.entity.FoodItem;
 public interface FoodItemService {
 	public void save(FoodItem type);
 	public List<FoodItem> getAllFoodItems();
-	public FoodItem getFoodItem(int theId, String item_availability);
-	public void deleteFoodItem(int id, String item_availability);
+	public FoodItem getFoodItem(int theId);
+	public void deleteFoodItem(int id);
 }

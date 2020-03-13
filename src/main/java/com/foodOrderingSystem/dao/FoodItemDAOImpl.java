@@ -1,8 +1,5 @@
 package com.foodOrderingSystem.dao;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -25,7 +22,6 @@ public class FoodItemDAOImpl implements FoodItemDAO {
 	public void saveFoodItem(FoodItem type) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		String[] availability = type.getAvailability().toString().split(",");
-		System.out.println("------------------"+type.getId());
 		for(String available: availability) {
 			type.setName(type.getName());
 			type.setDesc(type.getDesc());
@@ -51,22 +47,20 @@ public class FoodItemDAOImpl implements FoodItemDAO {
 	}
 
 	@Override
-	public FoodItem getFoodItem(int theId, String item_availability) {
+	public FoodItem getFoodItem(int theId) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query<FoodItem> theFoodItem = currentSession.createQuery("from food_item where id=:theid and item_availability=:available", FoodItem.class);
+		Query<FoodItem> theFoodItem = currentSession.createQuery("from food_item where id=:theid", FoodItem.class);
 		theFoodItem.setParameter("theid", theId);
-		theFoodItem.setParameter("available", item_availability);
 		FoodItem food_item = null;
 		food_item = theFoodItem.getSingleResult();
 		return food_item;
 	}
 
 	@Override
-	public void delete(int id, String item_availability) {
+	public void delete(int id) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query theQuery = currentSession.createQuery("delete from food_item where id=:theId and item_availability=:available");
+		Query theQuery = currentSession.createQuery("delete from food_item where id=:theId");
 		theQuery.setParameter("theId", id);
-		theQuery.setParameter("available", item_availability);
 		theQuery.executeUpdate();
 	}
 
