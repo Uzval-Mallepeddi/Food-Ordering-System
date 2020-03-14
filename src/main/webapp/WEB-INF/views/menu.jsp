@@ -25,7 +25,6 @@
       <p class="lead font-weight-normal">Foodie isn't just about authentic food, it specializes in high standard, fresh, varieties from all across the globe and healthy food with affordable prices. Our food is cooked fresh to the customer's order and taste. You are guaranteed the freshness of your order!</p>
       <p>
         <a href="/cart" class="btn btn-primary my-2">Cart <i class="fas fa-shopping-cart"></i></a>
-        <a href="#" class="btn btn-success my-2">Checkout <i class="fas fa-cash-register"></i></a>
       </p>
     </div>
   </section>
