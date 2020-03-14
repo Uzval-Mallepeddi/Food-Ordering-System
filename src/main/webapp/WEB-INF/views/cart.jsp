@@ -7,7 +7,7 @@
     <meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Menu | Foodie</title>
+    <title>Cart | Foodie</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="${pageContext.request.contextPath}/resources/css/menu.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/cart.css" rel="stylesheet">
@@ -47,7 +47,7 @@
 	</div>
 	<div class="clearfix"></div>
 	<div class="text-center" style="margin-top: 50px;">
-  		<a href="#" class="btn btn-primary">Checkout <i class="fas fa-cash-register"></i></a>
+  		<a href="/paymentgateway/secure" class="btn btn-primary">Checkout <i class="fas fa-cash-register"></i></a>
   		<a href="/menu" class="btn btn-warning">Menu <i class="fas fa-utensils"></i></a>
   	</div>
   </div>
